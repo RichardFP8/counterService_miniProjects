@@ -1,0 +1,24 @@
+/* using the '+' operator to select the adjacent <label>  of the specific <input>*/
+input[type='text'] + label, input[type='email'] + label{
+    color:blue;
+    font-family: monospace;
+    font-size: 1rem;
+    padding-left: 1.5em;
+}
+
+fieldset{
+    color: #FFF;
+}
+/* dark background */
+body {
+    background: rgba(0, 0, 0, 93%);
+    opacity: 0.9;
+}
+/* didn't want to go through each div and add the BS class, so one time here, what BS is there to solve this*/
+div[class='row'] {
+    margin-bottom: 1em;
+}
+
+#employeeRole{
+    margin-top: -1.5em;
+}

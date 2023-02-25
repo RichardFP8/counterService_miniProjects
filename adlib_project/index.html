@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adlibs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar bg-dark">
+            <div class="container-fluid">
+                <a href="" class="navbar-brand text-light p-1">Counter Service</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <h1 class="display-1 text-center">Adlibs Page</h1>
+        <!-- first row: the checkboxes for user to choose an adlib to fill out -->
+        <div class="row">
+            <!-- first checkbox -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" name="adlibFormOne" value="formOne" id="inlineAdlibFormOne"
+                        class="form-check-input mt-3">
+                    <label for="inlineAdlibFormOne" class="form-check-label display-5">I want to be an Astronaut</label>
+                </div>
+            </div>
+            <!--second adlib checkbox -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" name="adlibFormTwo" value="formTwo" id="inlineAdlibFormTwo"
+                        class="form-check-input mt-3">
+                    <label for="inlineAdlibFormTwo" class="form-check-label display-5 ">Best friend's with a
+                        dragon</label>
+                </div>
+            </div>
+            <!-- second copy & paste-- I mean third adlib checkbox -->
+            <div class="col col-md-6 col-lg-4">
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" name="adlibFormThree" value="formThree" id="inlineAdlibFormThree"
+                        class="form-check-input mt-3">
+                    <label for="inlineAdlibFormThree" class="form-check-label display-5">Halloween Treats</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- second row: all three forms; each form would be in a seperate column -->
+
+        <!-- the order of the forms is linked to the corresponding order of the checkboxes  -->
+        <div class="row mt-5" id="adlibsRow">
+            <!-- the first column, first form linked to first check -->
+            <div class="d-none" id="firstAdlibColumn">
+                <!-- the form takes up all the space possible of it's parent's -->
+                <!-- I'll use the firt letter of each word in the name of the form to better identify elements across the forms -->
+                <form class="container-fluid" id="IWantToBeAnAstronaut_form">
+                    <!-- each input box will be in it's own row -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstVerb-ing">A verb-ing</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstVerb-ing" id="IWTBAA_firstVerb-ing" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstVerbGeneral">A verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstVerbGeneral" id="IWTBAA_firstVerbGeneral"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_vehicleName">A vehicle</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="anyVehicleName" id="IWTBAA_vehicleName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_secondVerbGeneral">Second verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="secondVerb_not-ing" id="IWTBAA_secondVerbGeneral"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_tools">Some tools</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="tools" id="IWTBAA_tools" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstNoun">A noun</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstNoun" id="IWTBAA_firstNoun" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstColor">A color</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstColor" id="IWTBAA_firstColor" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstAdjective">An adjective</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstAdjective" id="IWTBAA_firstAdjective" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_secondcolor">Another color</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="secondcolor" id="IWTBAA_secondcolor" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstNumber">A number</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstNumber" id="IWTBAA_firstNumber" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstBodyPart">A body part</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstBodyPart" id="IWTBAA_firstBodyPart" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_secondBodyPart" class="text-center">Another body part</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="secondBodyPart" id="IWTBAA_secondBodyPart"
+                                class="form-control mt-2">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_thirdVerdGeneral">Third verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="thirdVerdGeneral" id="IWTBAA_thirdVerdGeneral"
+                                class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_fourthVerb">Fourth verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="fourthVerb" id="IWTBAA_fourthVerb" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_secondVehicle">Another vehicle</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="secondVehicle" id="IWTBAA_secondVehicle" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_firstPlaceName">A place</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="firstPlaceName" id="IWTBAA_firstPlaceName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="IWTBAA_fifthVerbGeneral">Fifth verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="fifthVerbGeneral" id="IWTBAA_fifthVerbGeneral"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" id="IWTBAA_submitbutton"
+                            class="btn btn-primary w-25 mx-auto my-3">GO!</button>
+                    </div>
+
+                </form>
+
+            </div>
+            <!-- second column, second form, definitely a copy & paste from before -->
+            <div class="d-none" id="secondAdlibColumn">
+                <form class="container-fluid" id="bestFriendsWithADragon_form">
+                    <!-- each input box will be in it's own row -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_name">A name</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_name" id="BFWAD_name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_largeNumber">A large number</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_largeNumber" id="BFWAD_largeNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_vegetable">A vegetable</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_vegetable" id="BFWAD_vegetable" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_place">A place</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="-ing" id="BFWAD_place" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_emotion">Any emotion</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_emotion" id="BFWAD_emotion" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_firstVerb-ing">A verb-ing</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_firstVerb-ing" id="BFWAD_firstVerb-ing" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_adjective">An adjective</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_adjective" id="BFWAD_adjective" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_secondVerb-ing">Another verb-ing</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_secondVerb-ing" id="BFWAD_secondVerb-ing"
+                                class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_noun">A noun plural</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_noun" id="BFWAD_noun" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_hobby">A hobby</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_hobby" id="BFWAD_hobby" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="BFWAD_nickname">A nickname</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="BFWAD_nickname" id="BFWAD_nickname" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <button type="submit" id="BFWAD_submitbutton"
+                            class="btn btn-primary w-25 mx-auto my-3">GO!</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- third column, last adlib, throwing a third one in why not? -->
+            <div class="d-none" id="thirdAdlibColumn">
+                <form class="container-fluid" id="halloweenTreats_form">
+                    <!-- each input box will be in it's own row -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_firstVerbGeneral">First verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_firstVerbGeneral" id="HT_firstVerbGeneral" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_firstAdjective">One adjective</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_firstAdjective" id="HT_firstAdjective" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_secondAdjective">Second adjective</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_secondAdjective" id="HT_secondAdjective" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_firstNounPlural">A plural noun</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_firstNounPlural" id="HT_firstNounPlural" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_secondPluralNoun">Another plural noun</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_secondPluralNoun" id="HT_secondPluralNoun" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_firstNoun">A noun</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_firstNoun" id="HT_firstNoun" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_thirdAdjective">Third adjective </label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_thirdAdjective" id="HT_thirdAdjective" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_color">A color</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_color" id="HT_color" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_secondNoun">Another noun</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_secondNoun" id="HT_secondNoun" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_fourthAdjective">4<sup>th</sup> adjective</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_fourthAdjective" id="HT_fourthAdjective" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_animalName">Random animal</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_animalName" id="HT_animalName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_secondVerb">Second verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_secondVerb" id="HT_secondVerb" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_thirdVerb">3<sup>rd</sup> verb</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_thirdVerb" id="HT_thirdVerb" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_fifthAdjective">5<sup>th</sup> adjective</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_fifthAdjective" id="HT_fifthAdjective" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_foodName">A candy</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_foodName" id="HT_foodName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_sixthAdjective">6 <sup>th</sup> adjective</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_sixthAdjective" id="HT_sixthAdjective" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="HT_secondFoodName">Another treat</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="HT_secondFoodName" id="HT_secondFoodName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <button type="submit" id="HT_submitbutton"
+                            class="btn btn-primary w-25 mx-auto my-3">GO!</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- third row: display the adlib message -->
+        <div class="row">
+            <p id="display_adlib_message"></p>
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
