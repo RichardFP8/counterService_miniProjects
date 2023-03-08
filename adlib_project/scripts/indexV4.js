@@ -31,26 +31,45 @@ function displayIWTBAA_form() {
     }
     else {
         firstAdlibColumn.className = "d-none";
-        if(document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
+        if (document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
     }
 }
 function display_IWTBAAAdlibMessage() {
     // get all the input boxes that are inside of the parent element of the IWTBAA adlib
     const allIWTBAAInputs = document.getElementById("IWantToBeAnAstronaut_form").querySelectorAll("input");
 
-    // this will seperate each of the lists of words used for this adlib
-    let newInputs = [];
-
+    //craete an array to store the keys of the form inputs; key-value pair for localStorage
+    let allFormEntries = [];
+    // this array will be populated with one attempt of the ad lib form; it'll be the value for the xth time the form was clicked; as if it was history
+    let formInputs = [];
+    // condition to test for anything else other than letters, digits & underscore
+    const regex = /\W+/;
     // convert the input boxes into elements of an array-> then FOR EACH  of the elements(input boxes) of this array-> APPEND the value of that input box into another array called newInputs
-    Array.from(allIWTBAAInputs).forEach(input => newInputs.push(input.value));
-    let currentWord = -1;
+
+    Array.from(allIWTBAAInputs).forEach(input => {
+        // two conditions to validate user's input; only digits, alphabet and including underscore plus a test in length  
+        if (!(regex.test(input.value)) && input.value.length <= 10) formInputs.push(input.value);
+    });
+
+    // the x th time the user clicked the button, each time storing a new array into storage and updating this number
+    let currentAttempt = 1;
+    // the unique key for each attempt of the form
+    let storageKeyEntry = `IWTBAA_${currentAttempt++}`;
+    // store the array of form inputs with the unique key
+    localStorage.setItem(storageKeyEntry, formInputs);
+    // store the name into a seperate array that stores keys instead of the form inputs
+    allFormEntries.push(storageKeyEntry);
 
     let adlibMessage = document.createElement("p");
+    adlibMessage.textContent = localStorage.getItem("IWTBAA_1");
 
-    adlibMessage.textContent = `Instead of ${newInputs[++currentWord]} every day to an office, I want to ${newInputs[++currentWord]} to outer space on a ${newInputs[++currentWord]} for my job. I'd ${newInputs[++currentWord]} science experiments using ${newInputs[++currentWord]} and ${newInputs[++currentWord]}, and get to see ${newInputs[++currentWord]} holes and ${newInputs[++currentWord]} stars up close. Maybe I'd even get to meet an alien life form, with ${newInputs[++currentWord]} skin and ${newInputs[++currentWord]} ${newInputs[++currentWord]} and ${newInputs[++currentWord]}. When it's time to ${newInputs[++currentWord]} to Earth, I'll ${newInputs[++currentWord]} in a ${newInputs[++currentWord]} and land safely in a ${newInputs[++currentWord]}, where friends and family will ${newInputs[++currentWord]} me and welcome me home`;
+    // adlibMessage.textContent = `Instead of ${newInputs[++currentWord]} every day to an office, I want to ${newInputs[++currentWord]} to outer space on a ${newInputs[++currentWord]} for my job. I'd ${newInputs[++currentWord]} science experiments using ${newInputs[++currentWord]} and ${newInputs[++currentWord]}, and get to see ${newInputs[++currentWord]} holes and ${newInputs[++currentWord]} stars up close. Maybe I'd even get to meet an alien life form, with ${newInputs[++currentWord]} skin and ${newInputs[++currentWord]} ${newInputs[++currentWord]} and ${newInputs[++currentWord]}. When it's time to ${newInputs[++currentWord]} to Earth, I'll ${newInputs[++currentWord]} in a ${newInputs[++currentWord]} and land safely in a ${newInputs[++currentWord]}, where friends and family will ${newInputs[++currentWord]} me and welcome me home`;
 
     // IWTBAA_adlib.push(newInputs);
-    document.getElementById("display_adlib_message").appendChild(adlibMessage);
+    // document.getElementById("display_adlib_message").appendChild(adlibMessage);
+
+    // "erasing" the current form inputs before the next onclick, shoudld already be stored at localStorage
+    formInputs.length = 0; 
     return false;
 }
 
@@ -63,7 +82,7 @@ function displayBFWAD_form() {
     }
     else {
         secondAdlibColumn.className = "d-none";
-        if(document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
+        if (document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
     }
 }
 function display_BFWADAdlibMessage() {
@@ -92,7 +111,8 @@ function display_HTForm() {
     }
     else {
         thirdAdlibColumn.className = "d-none";
-        if(document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();    }
+        if (document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
+    }
 }
 function display_HTAdlibMessage() {
     // get all the input boxes that are inside of the parent element of the IWTBAA adlib
