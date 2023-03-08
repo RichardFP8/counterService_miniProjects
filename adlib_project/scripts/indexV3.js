@@ -31,7 +31,7 @@ function displayIWTBAA_form() {
     }
     else {
         firstAdlibColumn.className = "d-none";
-        if(document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
+        if (document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
     }
 }
 function display_IWTBAAAdlibMessage() {
@@ -40,9 +40,12 @@ function display_IWTBAAAdlibMessage() {
 
     // this will seperate each of the lists of words used for this adlib
     let newInputs = [];
-
+    const regex = /\W+/;
     // convert the input boxes into elements of an array-> then FOR EACH  of the elements(input boxes) of this array-> APPEND the value of that input box into another array called newInputs
-    Array.from(allIWTBAAInputs).forEach(input => newInputs.push(input.value));
+    Array.from(allIWTBAAInputs).forEach(input => {
+        // two conditions to validate user's input; only digits, alphabet and including underscore plus a test in length 
+        if (!(regex.test(input.value)) && input.value.length <= 10) newInputs.push(input.value)
+    });
     let currentWord = -1;
 
     let adlibMessage = document.createElement("p");
@@ -63,7 +66,7 @@ function displayBFWAD_form() {
     }
     else {
         secondAdlibColumn.className = "d-none";
-        if(document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
+        if (document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
     }
 }
 function display_BFWADAdlibMessage() {
@@ -92,7 +95,8 @@ function display_HTForm() {
     }
     else {
         thirdAdlibColumn.className = "d-none";
-        if(document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();    }
+        if (document.getElementById("display_adlib_message") !== null) document.getElementById("display_adlib_message").remove();
+    }
 }
 function display_HTAdlibMessage() {
     // get all the input boxes that are inside of the parent element of the IWTBAA adlib
